@@ -1,0 +1,204 @@
+$white: #ffffff;
+$grey: #dadbdb;
+
+*,
+*:before,
+*:after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: url(https://i.pinimg.com/originals/6d/72/ec/6d72ec208bf85647d5e594db79218802.jpg)
+		center center;
+	background-attachment: fixed;
+	background-size: cover;
+	color: $white;
+	font-family: "Open Sans";
+	height: 100%;
+	width: 100%;
+
+	input,
+	textarea {
+		border: 1px solid transparent;
+		border-radius: 3px;
+	}
+}
+
+#root {
+	.container {
+		margin: 0 auto;
+		max-width: 1000px;
+	}
+
+	.search-outer {
+		margin: 50px 0 35px;
+		text-align: center;
+
+		.searchform {
+			display: inline-block;
+			position: relative;
+			left: 0;
+			right: 0;
+
+			input {
+				outline: medium none;
+			}
+
+			input[type="search"] {
+				background-color: transparent;
+				border: medium none;
+				border-width: 0 0 1px 0;
+				border-style: solid;
+				border-color: $grey;
+				border-radius: 0;
+				box-sizing: content-box;
+				color: $white;
+				cursor: pointer;
+				font-family: inherit;
+				font-size: 100%;
+				margin-bottom: 0;
+				padding: 3px 0;
+				transition: all 0.5s ease 0s;
+				max-width: 300px;
+				width: calc(100% - 15px);
+				-webkit-appearance: none;
+				-moz-appearance: none;
+
+				&::-webkit-search-decoration {
+					-webkit-appearance: none;
+				}
+
+				/* clears the 'X' from Internet Explorer */
+				&::-ms-clear {
+					display: none;
+					width: 0;
+					height: 0;
+				}
+
+				&::-ms-reveal {
+					display: none;
+					width: 0;
+					height: 0;
+				}
+
+				/* clears the 'X' */
+				&::-webkit-search-decoration,
+				&::-webkit-search-cancel-button,
+				&::-webkit-search-results-button,
+				&::-webkit-search-results-decoration {
+					display: none;
+				}
+
+				&:focus {
+					background-color: transparent;
+					color: #fff;
+					cursor: auto;
+					padding: 3px 0;
+				}
+			}
+
+			&:hover input[type="search"] {
+				background-color: transparent;
+				color: $white;
+				cursor: auto;
+				padding: 3px 0;
+			}
+		}
+
+		button[type="submit"] {
+			background-color: rgba(0, 0, 0, 0);
+			border: medium none;
+			color: #fff;
+			cursor: pointer;
+			height: 30px;
+			line-height: 1;
+			float: right;
+			font-size: 1em;
+			pointer-events: none;
+			width: auto;
+			z-index: 1000000000;
+		}
+
+		.fa-search {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+}
+
+::-webkit-input-placeholder {
+	/* Chrome/Opera/Safari */
+	color: rgba(255, 255, 255, 0.5);
+}
+
+::-moz-placeholder {
+	/* Firefox 19+ */
+	color: rgba(255, 255, 255, 0.5);
+}
+
+:-ms-input-placeholder {
+	/* IE 10+ */
+	color: rgba(255, 255, 255, 0.5);
+}
+
+:-moz-placeholder {
+	/* Firefox 18- */
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.data-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	list-style: none;
+	padding: 0 15px;
+
+	&:after {
+		content: "";
+	}
+
+	&:after,
+	li {
+		width: calc(33.33% - 10px);
+	}
+
+	li {
+		background: rgba(0, 0, 0, 0.5);
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		margin-bottom: 15px;
+		padding: 30px;
+
+		.title {
+			color: $white;
+			margin-bottom: 30px;
+			text-decoration: none;
+		}
+
+		.link {
+			color: $white;
+			text-decoration: none;
+		}
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.data-list {
+		&:after,
+		li {
+			width: calc(50% - 8px);
+		}
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	.data-list {
+		&:after,
+		li {
+			width: 100%;
+		}
+	}
+}
